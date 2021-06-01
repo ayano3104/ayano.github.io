@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q1 Spend Report</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <!-- 头部的盒子 -->
+    <header>
+      <h1>Q1 China Marketing PO Spend Report</h1>
+      <div class="showTime"></div>
+      <script>
+        var t = null;
+        t = setTimeout(time, 1000); //開始运行
+        function time() {
+          clearTimeout(t); //清除定时器
+          dt = new Date();
+          var y = dt.getFullYear();
+          var mt = dt.getMonth() + 1;
+          var day = dt.getDate();
+          var h = dt.getHours(); //获取时
+          var m = dt.getMinutes(); //获取分
+          var s = dt.getSeconds(); //获取秒
+          document.querySelector(".showTime").innerHTML =
+            "当前时间：" +  
+            y +
+            "年" +
+            mt +
+            "月" +
+            day +
+            "-" +
+            h +
+            "时" +
+            m +
+            "分" +
+            s +
+            "秒";
+          t = setTimeout(time, 1000); //设定定时器，循环运行
+        }
+      </script>
+      &
+    </header>
+
+    <!-- 页面主体部分 -->
+    <section class="mainbox">
+      <div class="column">
+        <div class="panel bar3">
+          <h3>Non-Preferred Vendor PO Aggregated Spend Overview (MUSD)</h3>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+
+        <div class="panel table" class="select">
+          <div class="title-box">
+              <h6>Non-Preferred Vendor PO Aggregated Spend Overview 
+              </h6>
+              
+          </div>
+          <div class="chart-box">
+              <table class="table3">
+              <thead>
+                  <tr>
+                      <th></th>
+                      <th>Total</th>
+                      <th>VAC</th>
+                      <th>RO</th>
+                      <th>AI</th>
+                      <th>II&IM</th>
+                  </tr>
+              </thead>
+              <tbody id="tList">
+<!--<tr><td colspan="4"><p style="width:9.6rem;">暂无数据</p></td></tr>-->
+           
+             <tr>
+                 <td>Total Marketing Spend</td>
+                 <td>11.8M</td>
+                 <td>5.0M</td>
+                 <td>2.8M</td>
+                 <td>2.2M</td>
+                 <td>0.9M</td>
+             </tr>
+             <tr>
+                 <td>Preferred Vendor Spend </td>
+                 <td>84.4%</td>
+                 <td>89.1%</td>
+                 <td>78.8%</td>
+                 <td>84.8%</td>
+                 <td>88.7%</td>
+             </tr>
+             <tr>
+                  <td>Non-Preferred Vendor Spend </td>
+                 <td>15.6%</td>
+                 <td>10.9%</td>
+                 <td>21.2%</td>
+                 <td>15.2%</td>
+                 <td>11.3%</td>
+             </tr>
+             <tr>
+                 <td>Vendors' Aggregated Spend >$50k</td>
+                 <td>9.7%</td>
+                 <td>4.1%</td>
+                 <td>17.2%</td>
+                 <td>7.9%</td>
+                 <td>0.0%</td>
+             </tr>
+            
+              </tbody>
+          </table>
+          
+          </div>
+      </div>
+      <div class="panel table" class="select">
+        <div class="title-box">
+            <h6>2021 Q1 TOP 10 Vendors </h6>
+        </div>
+        <div class="chart-box">
+            <table class="table0">
+            <thead>
+                <tr>
+                    <th>Vendor Name </th>
+                    <th>Category</th>
+                    <th>Vendor Type</th>
+                    <th>Top TA</th>
+                    <th>Q1 Spend (USD)</th>
+                </tr>
+            </thead>
+            <tbody id="tList">
+<!--<tr><td colspan="4"><p style="width:9.6rem;">暂无数据</p></td></tr>-->
+         
+           <tr>
+               <td>上海施达勒脉达思营销咨询有限公司</td>
+               <td>Agencies</td>
+               <td>Preferred</td>
+               <td>VAC,RO,AI</td>
+               <td>1,067,904</td>
+           </tr>
+           <tr>
+               <td>中智关爱通(上海)科技股份有限公司</td>
+               <td>Print&Promo</td>
+               <td>Preferred</td>
+               <td>AI,RO,VAC</td>
+               <td>783,515</td>
+           </tr>
+           <tr>
+                <td>北京优诺斯德广告有限公司
+                </td>
+               <td>Agencies</td>
+               <td>Preferred</td>
+               <td>VAC,RO,AI
+              </td>
+               <td>739,971</td>
+           </tr>
+           <tr>
+               <td>北京盛光时代广告有限公司
+              </td>
+               <td>Agencies</td>
+               <td>Preferred</td>
+               <td>VAC,AI
+              </td>
+               <td>640,468</td>
+           </tr>
+           <tr>
+            <td>北京汇美星公关顾问有限公司
+           </td>
+            <td>Agencies</td>
+            <td>Preferred</td>
+            <td>VAC
+           </td>
+            <td>584,736</td>
+        </tr>
+          
+            </tbody>
+        </table>
+        
+        </div>
+    </div>
+      </div>
+      <div class="column">
+        <div class="panel bar">
+          <h2>Q1 Spend By Category (MUSD)</h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel bar2">
+          <h2>Q1 Spend by TA (MUSD)</h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+
+        <div class="panel table" class="select">
+          <div class="title-box">
+          <h6>2021 Q1 TOP 10 Non-Preferred Vendors</h6>
+        </div>
+        <div class="chart-box">
+            <table class="table1">
+            <thead>
+                <tr>
+                    <th>Vendor Name </th>
+                    <th>Category</th>
+                    <th>Top TA</th>
+                    <th>Q1 Spend (USD)</th>
+                </tr>
+            </thead>
+            <tbody id="tList">
+<!--<tr><td colspan="4"><p style="width:9.6rem;">暂无数据</p></td></tr>-->
+         
+           <tr>
+               <td>上海镁信健康科技有限公司
+              </td>
+               <td>MCM</td>
+               <td>RO</td>
+               <td>285,969</td>
+           </tr>
+           <tr>
+               <td>上海嘉医市场营销策划有限公司
+              </td>
+               <td>Market Research</td>
+               <td>RO</td>
+               <td>200,301</td>
+           </tr>
+           <tr>
+                <td>北京医助科技有限公司
+                </td>
+               <td>Market Research</td>
+               <td>AI
+              </td>
+               <td>93,059</td>
+           </tr>
+           <tr>
+               <td>成都悟空文化传媒有限公司
+              </td>
+               <td>Agencies</td>
+               <td>AI
+              </td>
+               <td>82,540</td>
+           </tr>
+           <tr>
+            <td>上海新民周刊文化传播有限公司
+           </td>
+            <td>Media </td>
+            <td>VAC
+           </td>
+            <td>76,954</td>
+        </tr>
+            </tbody>
+        </table>
+        
+        </div>
+    </div>
+      </div>
+      <div class="column">
+        <!-- no模块制作 -->
+        <div class="no">
+          <div class="no-bd">
+            <ul>
+              <li>PBG China 2021 Q1 PO Marketing Spend</li>
+            </ul>
+          </div>
+           <div class="no-hd">
+            <ul>
+              <li> $ 11,764,432</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel2" class="select">
+          <div class="title-box">
+          <h6>Non-preferred Vendor Procurement Comments</h6>
+          </div>
+          <div class="chart-box">
+            <table class="table5">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Vendor Name
+                    </th>
+                    <th>Total Spend (USD)</th>
+                    <th>Procurement Comments</th>
+                </tr>
+            </thead>
+            <tbody id="tList">
+<!--<tr><td colspan="4"><p style="width:9.6rem;">暂无数据</p></td></tr>-->
+         
+           <tr>
+               <td>MCM</td>
+               <td>上海镁信健康科技有限公司
+              </td>
+               <td>285,969</td>
+               <td>Through bidding process
+              </td>
+           </tr>
+           <tr>
+             <td>MCM</td>
+             <td>广西京东拓先电子商务有限公司</td>
+             <td>73,303</td>
+             <td>Competitive bidding required
+             </td>
+           </tr>
+           <tr>
+                <td>Media
+                </td>
+               <td>上海新民周刊文化传播有限公司
+              </td>
+               <td>76,954</td>
+               <td>A pre-assessment must be conducted
+              </td>
+           </tr>
+           <tr>
+            <td>Media
+            </td>
+           <td>《中华医学杂志》社有限责任公司
+          </td>
+           <td>56,929</td>
+           <td>A pre-assessment must be conducted
+          </td>
+          </tr>
+          
+            </tbody>
+        </table>
+        
+        </div>
+
+
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+        
+        <div class="panel table" class="select">
+          <div class="title-box">
+              <h6>2021 Q1 TOP 10 PO</h6>
+          </div>
+          <div class="chart-box">
+              <table class="table2">
+              <thead>
+                  <tr>
+                      <th>Requisition Title
+                      </th>
+                      <th>Vendor Name
+                      </th>
+                      <th>Vendor Type</th>
+                      <th>TA</th>
+                      <th>Spend (USD)</th>
+                  </tr>
+              </thead>
+              <tbody id="tList">
+  <!--<tr><td colspan="4"><p style="width:9.6rem;">暂无数据</p></td></tr>-->
+           
+             <tr>
+                 <td>第三方交易-索坦英立达肾细胞癌第三方医疗费用补偿保险项目
+                </td>
+                 <td>上海镁信健康科技有限公司
+                </td>
+                 <td>Non-Preferred</td>
+                 <td>RO</td>
+                 <td>285,969</td>
+             </tr>
+             <tr>
+                 <td>PBG 沛儿 - 2021 阿里平台开发使用及直播项目 -  阿里健康
+                </td>
+                 <td>阿里健康科技（中国）有限公司
+                </td>
+                 <td>Preferred</td>
+                 <td>VAC</td>
+                 <td>276,698</td>
+             </tr>
+             <tr>
+                  <td>2020Q4 PBG 荣誉奖励积分采购-GCO备案积分
+                  </td>
+                 <td>中智关爱通（上海）科技股份有限公司
+                </td>
+                 <td>Preferred</td>
+                 <td>AI,RO
+                </td>
+                 <td>240,419</td>
+             </tr>
+            
+              </tbody>
+          </table>
+          
+          </div>
+      </div>
+        </div>
+    </section>
+    <script src="js/flexible.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <!-- 先引入jquery -->
+    <script src="js/jquery.js"></script>
+    <!-- 必须先引入china.js 这个文件 因为中国地图需要 -->
+    <script src="js/china.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
